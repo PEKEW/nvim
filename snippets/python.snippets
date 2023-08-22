@@ -1,0 +1,137 @@
+snippet #!
+	#! /usr/bin/env python3
+	# -*- conding: utf-8 -*-
+
+snippet imp
+	import ${0:module}
+
+snippet from
+	from ${1:package} import ${0:module}
+
+snippet doc
+	"""
+	File: ${1:filename}
+	Author: pekewang
+	Email: pekewang@buaa.edu.cn
+	Discription: ${0:info}
+	"""
+
+snippet wh
+	while $1:
+		${0: ${VISUAL}}
+
+snippet wht
+	while Ture:
+		if(${0}):
+			break
+	
+snippet with
+	with ${1:expr} as ${2:var}:
+		${0:{VISUAL}}
+
+
+snippet class
+	class ${1:class_name}:
+		"""
+			${2:description}
+		"""
+		def __init__(self, ${3:args}):
+			${0}
+
+snippet def
+	def ${1:name}(${2:paramters}):
+		${0}
+
+snippet def2
+	def ${1:name}(self, ${2:paramters}):
+		${0}
+
+snippet if
+	if $1:
+		${0:${VISUAL}}
+snippet el
+	else:
+		${0:${VISUAL}}
+snippet ei
+	elif $1:
+		${0:${VISUAL}}
+
+# For
+snippet for
+	for ${1:item} in ${2:items}:
+		${0}
+
+snippet ld
+	${1:var} = lambda ${2:vars} : ${0:action}
+
+snippet ret
+	return ${0}
+
+snippet try Try/Except
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${0:raise $3}
+snippet trye Try/Except/Else
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${4:raise $3}
+	else:
+		${0}
+snippet tryf Try/Except/Finally
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${4:raise $3}
+	finally:
+		${0}
+snippet tryef Try/Except/Else/Finally
+	try:
+		${1:${VISUAL}}
+	except ${2:Exception} as ${3:e}:
+		${4:raise $3}
+	else:
+		${5}
+	finally:
+		${0}
+
+snippet ifmain
+	if __name__ == '__main__':
+		${0:main()}
+
+snippet taichi
+	import taichi as ti
+	import taichi.math as tm
+
+snippet tifun
+	@ti.func
+	def ${1:func_name}(${2:paramters}):
+		${0:{VISUAL}}
+
+snippet tiker
+	@ti.kernel
+	def ${1:func_name}(${2:paramters}):
+		${0}
+
+snippet tikerr
+	@ti.kernel
+	def ${1:func_name}(${2:paramters}) -> ${3:return_type}:
+		${0}
+		return
+
+snippet init
+	ti.init(arch=${1:divice})
+
+snippet tivec
+	ti.type.vector(n=${1:dim}, dtype=${2:dtype}, shape=${0})
+
+snippet timat
+	ti.type.matrix(${1}, ${2}, ${3:dtype})
+
+snippet tistruct
+	ti.type.struct()
+
+snippet ticlass
+	@ti.dataclass
+	class ${1:class_name}:
